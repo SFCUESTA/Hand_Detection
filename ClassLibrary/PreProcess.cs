@@ -43,7 +43,7 @@ namespace ClassLibrary
             hsv = img2.ToImage<Hsv, byte>();
             img = img2.ToImage<Gray, byte>();
             Piel();
-            Hull();
+            //Hull();
             return img;
         }
         #endregion

@@ -1,4 +1,5 @@
-﻿using Emgu.CV;
+﻿
+using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using Emgu.CV.UI;
@@ -16,10 +17,11 @@ namespace ClassLibrary
         private VideoCapture capture;
         public Mat Frame;
         private ImageBox imgBox1, imgBox2;
-        Image<Gray, byte> Edge, Alt;
+        
         private int Indice1 = 0;
         public bool calib = false;
 
+        Image<Gray, byte> Edge, Alt;
         PreProcess pr = new PreProcess();
         public Camara()
         {
@@ -49,10 +51,11 @@ namespace ClassLibrary
                 try
                 {
                     capture.Retrieve(Frame);
-                    Alt = pr.Cont(Frame);
-                    Edge = pr.Procesar(Frame);
-                    imgBox1.Image = Edge;
-                    imgBox2.Image = Alt;
+                    //Alt = pr.Cont(Frame);
+                    //Edge = pr.Procesar(Frame);
+                    imgBox1.Image = Frame;
+                    //imgBox1.Image = Edge;
+                    //imgBox2.Image = Alt;
 
                 }
                 catch { }
